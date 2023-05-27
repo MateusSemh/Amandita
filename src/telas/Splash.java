@@ -26,13 +26,9 @@ Thread t = new Thread(new Runnable() {
             try {
                 jProgressBar1.setValue(i);
                 jProgressBar2.setValue(i);
-
-                // Verificar se a porcentagem está entre 40% e 60%
-                if (i >= 40 && i <= 60) {
-                    Thread.sleep(100); // Pausa maior entre 40% e 60%
-                } else {
-                    Thread.sleep(40); // Pausa normal para outras porcentagens
-                }
+                
+                Thread.sleep(40); 
+                
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
             }

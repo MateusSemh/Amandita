@@ -4,6 +4,11 @@
  */
 package telas;
 
+import java.awt.Color;
+import java.awt.Cursor;
+import javax.swing.JLabel;
+
+
 /**
  *
  * @author Pichau
@@ -13,8 +18,18 @@ public class Carrinho extends javax.swing.JFrame {
     /**
      * Creates new form Carrinho
      */
+   
+    
+    //para poder passar um texto duma tela para outra
+    public static Carrinho Instance;
+    public JLabel lbl1;
+    
     public Carrinho() {
         initComponents();
+                  
+        Instance = this;
+        lbl1 = jLabel1;
+     
     }
 
     /**
@@ -26,21 +41,265 @@ public class Carrinho extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        Sair = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        Carrinho1 = new javax.swing.JLabel();
+        Minhaconta1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        btnEntrar2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("jLabel1");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(175, 176, 232));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(225, 34, 127)));
+
+        Sair.setFont(new java.awt.Font("Microsoft Tai Le", 1, 36)); // NOI18N
+        Sair.setForeground(new java.awt.Color(255, 255, 255));
+        Sair.setText("X");
+        Sair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SairMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SairMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SairMouseExited(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Arial Black", 0, 50)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("CARRINHO");
+
+        Carrinho1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        Carrinho1.setForeground(new java.awt.Color(255, 255, 255));
+        Carrinho1.setText("VOLTAR");
+        Carrinho1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Carrinho1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Carrinho1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Carrinho1MouseExited(evt);
+            }
+        });
+
+        Minhaconta1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        Minhaconta1.setForeground(new java.awt.Color(255, 255, 255));
+        Minhaconta1.setText("MINHA CONTA");
+        Minhaconta1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Minhaconta1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Minhaconta1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Minhaconta1MouseExited(evt);
+            }
+        });
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/logoamandita2.png"))); // NOI18N
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/SetaLeft.png"))); // NOI18N
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/usuario.png"))); // NOI18N
+
+        btnEntrar2.setBackground(new java.awt.Color(220, 27, 116));
+        btnEntrar2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btnEntrar2.setForeground(new java.awt.Color(255, 255, 255));
+        btnEntrar2.setText("ENCOMENDAR");
+        btnEntrar2.setBorder(null);
+        btnEntrar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEntrar2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnEntrar2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnEntrar2MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnEntrar2MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnEntrar2MouseReleased(evt);
+            }
+        });
+        btnEntrar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntrar2ActionPerformed(evt);
+            }
+        });
+
+        jList1.setBackground(new java.awt.Color(175, 176, 232));
+        jList1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 4, 0, 4, new java.awt.Color(225, 34, 127)));
+        jList1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jList1.setForeground(new java.awt.Color(255, 255, 255));
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Chocolate", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Minhaconta1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(161, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(210, 210, 210))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(279, 279, 279)
+                                .addComponent(Sair, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Carrinho1)
+                                .addGap(37, 37, 37))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnEntrar2, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(156, 156, 156))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(292, 292, 292))))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Sair, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 117, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Minhaconta1)
+                        .addGap(25, 25, 25))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Carrinho1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel7))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(107, 107, 107)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
+                .addComponent(btnEntrar2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void SairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SairMouseClicked
+        //quando clicar
+        System.exit(0);
+    }//GEN-LAST:event_SairMouseClicked
+
+    private void SairMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SairMouseEntered
+        Metodos.Labelentered(Sair);
+    }//GEN-LAST:event_SairMouseEntered
+
+    private void SairMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SairMouseExited
+        Metodos.Labeexit(Sair);
+    }//GEN-LAST:event_SairMouseExited
+
+    private void btnEntrar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrar2MouseClicked
+        new Pagamento().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnEntrar2MouseClicked
+
+    private void btnEntrar2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrar2MouseEntered
+        Metodos.btnentered(btnEntrar2);
+
+    }//GEN-LAST:event_btnEntrar2MouseEntered
+
+    private void btnEntrar2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrar2MouseExited
+        Metodos.btnexit(btnEntrar2);
+    }//GEN-LAST:event_btnEntrar2MouseExited
+
+    private void btnEntrar2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrar2MousePressed
+        Metodos.btnpress(btnEntrar2);
+    }//GEN-LAST:event_btnEntrar2MousePressed
+
+    private void btnEntrar2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrar2MouseReleased
+        Metodos.btnrelease(btnEntrar2);
+    }//GEN-LAST:event_btnEntrar2MouseReleased
+
+    private void btnEntrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrar2ActionPerformed
+
+    }//GEN-LAST:event_btnEntrar2ActionPerformed
+
+    private void Minhaconta1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Minhaconta1MouseExited
+        Minhaconta1.setForeground(Color.white);
+    }//GEN-LAST:event_Minhaconta1MouseExited
+
+    private void Minhaconta1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Minhaconta1MouseEntered
+        Minhaconta1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        Minhaconta1.setForeground(new Color(220,27,116));
+    }//GEN-LAST:event_Minhaconta1MouseEntered
+
+    private void Minhaconta1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Minhaconta1MouseClicked
+        new Perfil().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_Minhaconta1MouseClicked
+
+    private void Carrinho1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Carrinho1MouseExited
+        Carrinho1.setForeground(Color.white);
+    }//GEN-LAST:event_Carrinho1MouseExited
+
+    private void Carrinho1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Carrinho1MouseEntered
+        Carrinho1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        Carrinho1.setForeground(new Color(220,27,116));
+    }//GEN-LAST:event_Carrinho1MouseEntered
+
+    private void Carrinho1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Carrinho1MouseClicked
+        new Cardapio().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_Carrinho1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -78,5 +337,17 @@ public class Carrinho extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Carrinho1;
+    private javax.swing.JLabel Minhaconta1;
+    private javax.swing.JLabel Sair;
+    private javax.swing.JButton btnEntrar2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,17 +5,16 @@
 package telas;
 
 import java.awt.Cursor;
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
 import java.awt.Color;
-import java.awt.Font;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.UIManager;
+import javax.swing.JFormattedTextField;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
-import javax.swing.plaf.ColorUIResource;
+import javax.swing.text.MaskFormatter;
+
 
 /**
  *
@@ -29,9 +28,18 @@ public class Cadastro extends javax.swing.JFrame {
     public Cadastro() {
         initComponents();
         
-        
-        
+           
     }
+    
+    // da pra criar esse método aqui ou no Metodos, pra qualquer tela acessar
+    /*private void formatarCampo(){
+        try {
+            MaskFormatter mask = new MaskFormatter("(##)#####-####");
+            mask.install(txtCel);
+        } catch (ParseException ex) {
+            Logger.getLogger(Cadastro.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,7 +54,6 @@ public class Cadastro extends javax.swing.JFrame {
         Sair = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtCelular = new javax.swing.JTextField();
         txtSenha = new javax.swing.JPasswordField();
         btnCadastra = new javax.swing.JButton();
         login = new javax.swing.JLabel();
@@ -58,6 +65,7 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        txtCel = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -92,26 +100,6 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(220, 27, 116));
         jLabel3.setText("CADASTRO");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 270, 40));
-
-        txtCelular.setBackground(new java.awt.Color(175, 176, 232));
-        txtCelular.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtCelular.setForeground(new java.awt.Color(255, 255, 255));
-        txtCelular.setText("TELEFONE/CELULAR:");
-        txtCelular.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        txtCelular.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtCelularMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                txtCelularMouseEntered(evt);
-            }
-        });
-        txtCelular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCelularActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 340, 40));
 
         txtSenha.setBackground(new java.awt.Color(175, 176, 232));
         txtSenha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -230,6 +218,18 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/senhaCheck.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, -1, -1));
 
+        txtCel.setBackground(new java.awt.Color(175, 176, 232));
+        txtCel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        txtCel.setForeground(new java.awt.Color(255, 255, 255));
+        txtCel.setText("TELEFONE/CELULAR:");
+        txtCel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtCel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCelMouseClicked(evt);
+            }
+        });
+        jPanel1.add(txtCel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 340, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -264,14 +264,6 @@ public class Cadastro extends javax.swing.JFrame {
         Metodos.Labelentered(Sair);
     }//GEN-LAST:event_SairMouseEntered
 
-    private void txtCelularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCelularMouseClicked
-        txtCelular.setText("");
-    }//GEN-LAST:event_txtCelularMouseClicked
-
-    private void txtCelularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCelularActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCelularActionPerformed
-
     private void txtSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSenhaMouseClicked
         txtSenha.setText("");
     }//GEN-LAST:event_txtSenhaMouseClicked
@@ -294,10 +286,6 @@ public class Cadastro extends javax.swing.JFrame {
     private void txtUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuario1ActionPerformed
-
-    private void txtCelularMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCelularMouseEntered
-        
-    }//GEN-LAST:event_txtCelularMouseEntered
 
     private void txtSenha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSenha1MouseClicked
        txtSenha1.setText("");
@@ -358,6 +346,10 @@ public class Cadastro extends javax.swing.JFrame {
         Metodos.btnrelease(btnCadastra);
     }//GEN-LAST:event_btnCadastraMouseReleased
 
+    private void txtCelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCelMouseClicked
+        Metodos.formatarCampo(txtCel);
+    }//GEN-LAST:event_txtCelMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -407,7 +399,7 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel login;
-    private javax.swing.JTextField txtCelular;
+    private javax.swing.JFormattedTextField txtCel;
     private javax.swing.JPasswordField txtSenha;
     private javax.swing.JPasswordField txtSenha1;
     private javax.swing.JTextField txtUsuario1;

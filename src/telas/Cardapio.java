@@ -11,8 +11,6 @@ package telas;
 
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Cardapio extends javax.swing.JFrame {
 
@@ -41,11 +39,11 @@ public class Cardapio extends javax.swing.JFrame {
         Sair = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        Carrinho1 = new javax.swing.JLabel();
         Minhaconta1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        Minhaconta3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -112,24 +110,9 @@ public class Cardapio extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("DOCES SOB ENCOMENDA");
 
-        Carrinho1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        Carrinho1.setForeground(new java.awt.Color(255, 255, 255));
-        Carrinho1.setText("CARRINHO");
-        Carrinho1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Carrinho1MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Carrinho1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Carrinho1MouseExited(evt);
-            }
-        });
-
         Minhaconta1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         Minhaconta1.setForeground(new java.awt.Color(255, 255, 255));
-        Minhaconta1.setText("MINHA CONTA");
+        Minhaconta1.setText("CARRINHO");
         Minhaconta1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Minhaconta1MouseClicked(evt);
@@ -144,9 +127,24 @@ public class Cardapio extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/logoamandita2.png"))); // NOI18N
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/Carrinho.png"))); // NOI18N
-
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/usuario.png"))); // NOI18N
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/Carrinho.png"))); // NOI18N
+
+        Minhaconta3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        Minhaconta3.setForeground(new java.awt.Color(255, 255, 255));
+        Minhaconta3.setText("MINHA CONTA");
+        Minhaconta3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Minhaconta3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Minhaconta3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Minhaconta3MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -162,23 +160,8 @@ public class Cardapio extends javax.swing.JFrame {
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(210, 210, 210))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(279, 279, 279)
-                                .addComponent(Sair, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(225, 225, 225)
-                                .addComponent(jLabel8)))
+                        .addComponent(Sair, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Minhaconta1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Carrinho1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -187,31 +170,40 @@ public class Cardapio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addContainerGap(17, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Minhaconta3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Minhaconta1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel10)
+                .addGap(43, 43, 43))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Sair, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 29, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Sair, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(Carrinho1)
-                                        .addGap(13, 13, 13))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                                    .addComponent(Minhaconta1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(7, 7, 7))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(Minhaconta3)
+                                .addGap(25, 25, 25))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Minhaconta1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)))))
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel18)
@@ -320,22 +312,8 @@ public class Cardapio extends javax.swing.JFrame {
         Metodos.Labeexit(Sair);
     }//GEN-LAST:event_SairMouseExited
 
-    private void Carrinho1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Carrinho1MouseClicked
-        new Carrinho().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_Carrinho1MouseClicked
-
-    private void Carrinho1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Carrinho1MouseEntered
-        Carrinho1.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        Carrinho1.setForeground(new Color(220,27,116));
-    }//GEN-LAST:event_Carrinho1MouseEntered
-
-    private void Carrinho1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Carrinho1MouseExited
-        Carrinho1.setForeground(Color.white);
-    }//GEN-LAST:event_Carrinho1MouseExited
-
     private void Minhaconta1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Minhaconta1MouseClicked
-        new Perfil().setVisible(true);
+        new Carrinho().setVisible(true);
         dispose();
     }//GEN-LAST:event_Minhaconta1MouseClicked
 
@@ -347,6 +325,20 @@ public class Cardapio extends javax.swing.JFrame {
     private void Minhaconta1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Minhaconta1MouseExited
         Minhaconta1.setForeground(Color.white);
     }//GEN-LAST:event_Minhaconta1MouseExited
+
+    private void Minhaconta3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Minhaconta3MouseClicked
+        new Perfil().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_Minhaconta3MouseClicked
+
+    private void Minhaconta3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Minhaconta3MouseEntered
+        Minhaconta1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        Minhaconta1.setForeground(new Color(220,27,116));
+    }//GEN-LAST:event_Minhaconta3MouseEntered
+
+    private void Minhaconta3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Minhaconta3MouseExited
+        Minhaconta1.setForeground(Color.white);
+    }//GEN-LAST:event_Minhaconta3MouseExited
 
     /**
      * @param args the command line arguments
@@ -384,15 +376,15 @@ public class Cardapio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Carrinho1;
     private javax.swing.JLabel Minhaconta1;
+    private javax.swing.JLabel Minhaconta3;
     private javax.swing.JLabel Proxima1;
     private javax.swing.JLabel Sair;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane4;
