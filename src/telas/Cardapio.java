@@ -332,12 +332,12 @@ public class Cardapio extends javax.swing.JFrame {
     }//GEN-LAST:event_Minhaconta3MouseClicked
 
     private void Minhaconta3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Minhaconta3MouseEntered
-        Minhaconta1.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        Minhaconta1.setForeground(new Color(220,27,116));
+        Minhaconta3.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        Minhaconta3.setForeground(new Color(220,27,116));
     }//GEN-LAST:event_Minhaconta3MouseEntered
 
     private void Minhaconta3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Minhaconta3MouseExited
-        Minhaconta1.setForeground(Color.white);
+        Minhaconta3.setForeground(Color.white);
     }//GEN-LAST:event_Minhaconta3MouseExited
 
     /**

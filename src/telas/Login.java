@@ -9,6 +9,7 @@ import java.awt.Cursor;
 import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
+import telasAdm.Painel;
 
 
 /**
@@ -221,8 +222,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSenhaMouseClicked
 
     private void btnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseClicked
-        new Cardapio().setVisible(true);
-        dispose();
+         
     }//GEN-LAST:event_btnEntrarMouseClicked
 
     private void btnEntrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseEntered
@@ -231,7 +231,21 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEntrarMouseEntered
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-    
+
+        //btn entrar
+        
+        if (txtUsuario.getText().equals("adm") && new String(txtSenha.getPassword()).equals("123"))
+        {
+            //se for adm, entra na tela adm
+            new Painel().setVisible(true);
+            dispose();
+        } else {
+            //se não for adm
+            new Cardapio().setVisible(true);
+            dispose();
+        }
+        
+        
         
     }//GEN-LAST:event_btnEntrarActionPerformed
 
