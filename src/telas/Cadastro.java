@@ -5,6 +5,8 @@
 package telas;
 
 import java.awt.Cursor;
+import dao.amanditaDAO;
+import beans.Usuarios;
 import java.awt.Color;
 import java.text.ParseException;
 import java.util.logging.Level;
@@ -65,7 +67,7 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtCel = new javax.swing.JFormattedTextField();
+        txtCelular = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -218,17 +220,17 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/senhaCheck.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, -1, -1));
 
-        txtCel.setBackground(new java.awt.Color(175, 176, 232));
-        txtCel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        txtCel.setForeground(new java.awt.Color(255, 255, 255));
-        txtCel.setText("TELEFONE/CELULAR:");
-        txtCel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtCel.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtCelular.setBackground(new java.awt.Color(175, 176, 232));
+        txtCelular.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        txtCelular.setForeground(new java.awt.Color(255, 255, 255));
+        txtCelular.setText("TELEFONE/CELULAR:");
+        txtCelular.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtCelular.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtCelMouseClicked(evt);
+                txtCelularMouseClicked(evt);
             }
         });
-        jPanel1.add(txtCel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 340, 40));
+        jPanel1.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 340, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -310,18 +312,25 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void btnCadastraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastraActionPerformed
         
+        String nomeUsuario = txtUsuario1.getText();
+        String telefoneUsuario = txtCelular.getText();
+        String senhaUsuario = txtSenha1.getText();
+        Usuarios usuarios = new Usuarios();
+        usuarios.setNome(nomeUsuario);
+        usuarios.setSenha(senhaUsuario);
+        usuarios.setTelefone(telefoneUsuario);
         
-        //aqui em cima ↑ , fazer toda a conexão com o banco
-        //se der certo
-        //JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!", "Mensagem", JOptionPane.PLAIN_MESSAGE);
+        amanditaDAO  usuariosDAO = new amanditaDAO();
+        usuariosDAO.inserir(usuarios);
         
+        txtUsuario1.setText("");
+        txtCelular.setText("");
+        txtSenha1.setText("");
+        txtSenha.setText("");
+            
         new Login().setVisible(true);
         dispose();
-        
-        //se der errado
-       // JOptionPane.showMessageDialog(null, "Não foi possível cadastrar", "Mensagem", JOptionPane.PLAIN_MESSAGE);
-        
-    
+          
     }//GEN-LAST:event_btnCadastraActionPerformed
 
     private void loginMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseExited
@@ -346,9 +355,9 @@ public class Cadastro extends javax.swing.JFrame {
         Metodos.btnrelease(btnCadastra);
     }//GEN-LAST:event_btnCadastraMouseReleased
 
-    private void txtCelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCelMouseClicked
-        Metodos.formatarCampo(txtCel);
-    }//GEN-LAST:event_txtCelMouseClicked
+    private void txtCelularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCelularMouseClicked
+        Metodos.formatarCampo(txtCelular);
+    }//GEN-LAST:event_txtCelularMouseClicked
 
     /**
      * @param args the command line arguments
@@ -399,7 +408,7 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel login;
-    private javax.swing.JFormattedTextField txtCel;
+    private javax.swing.JFormattedTextField txtCelular;
     private javax.swing.JPasswordField txtSenha;
     private javax.swing.JPasswordField txtSenha1;
     private javax.swing.JTextField txtUsuario1;

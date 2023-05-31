@@ -6,6 +6,7 @@ package conexao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  *
@@ -16,20 +17,17 @@ public class Conexao {
     public Connection getConexao()
     {
         try {
-            //tentar estabelecer a conexao
-            Connection conn =  DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/Amandita?servetTimezone=UTC", //linha de conexão
-                    "root", //user
-                    "" //senha
-                    );
-            return conn;
-        } catch (Exception e){
-           
-            //se der erro, ele vai cair no catch para exibir o erro
-            System.out.println("Erro ao conectar" + e.getMessage());
+        //tentar estabelecer conexão
+        Connection conn = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/amandita?serverTimezone=UTC", //linha da conexão 
+                "root", // usuario do mysql
+                "" //senha do mysql
+        );
+        return conn;
+        }  catch (SQLException e){
+        //caso não estabeleça cai nesse catch
+            System.out.println(e.getMessage() + "Erro ao conectar ao banco");
             return null;
         }
-    }
-    
-    
+     }
 }

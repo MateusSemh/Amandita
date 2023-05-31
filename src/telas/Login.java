@@ -4,13 +4,16 @@
  */
 package telas;
 
+import beans.Usuarios;
+import dao.amanditaDAO;
 import java.awt.Color;
 import java.awt.Cursor;
 import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
-import telasAdm.Painel;
-
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -232,8 +235,35 @@ public class Login extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
 
-        //btn entrar
+        try {
+            String nomeUsuario, senhaUsuario;
+            nomeUsuario = txtUsuario.getText();
+            senhaUsuario = new String(txtSenha.getPassword()).trim();
+
+            Usuarios objusuarioBeans = new Usuarios();
+            objusuarioBeans.setNome(nomeUsuario);
+            objusuarioBeans.setSenha(senhaUsuario);
+            //objusuarioBeans.setTelefone(nomeUsuario);
+
+            amanditaDAO objusuarioDAO = new amanditaDAO();
+            ResultSet rsUsuarioDao = objusuarioDAO.autenticacaoUsuario(objusuarioBeans);
+
+            if (rsUsuarioDao.next()) {
+                //se o que usuario digitou, cai no if e chama tela login
+                Cardapio objtelaCardapio = new Cardapio();
+                objtelaCardapio.setVisible(true);
+
+                dispose();
+            } else {
+                //enviar mensagem com usuario ou senha incorretos
+                JOptionPane.showMessageDialog(null,"Usuário ou senha inválido.");
+            }
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Login" + erro);
+        }
         
+         
+        /*
         if (txtUsuario.getText().equals("adm") && new String(txtSenha.getPassword()).equals("123"))
         {
             //se for adm, entra na tela adm
@@ -244,9 +274,7 @@ public class Login extends javax.swing.JFrame {
             new Cardapio().setVisible(true);
             dispose();
         }
-        
-        
-        
+        */
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void CadastreseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CadastreseMouseClicked
