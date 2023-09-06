@@ -1,4 +1,4 @@
-# Amandita
+# Amandita 2
 Aplicativo feito em Java para controlar pedidos 
 
 Sistema no qual um usuário pode se cadastrar com um login, senha e celular, fazer seu acesso e já entrar na tela de pedidos, fazer seu pedido, seguir para o pagamento, ler o qrcode, clicar no botão de concluído
